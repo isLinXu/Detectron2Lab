@@ -4,6 +4,8 @@
 
 有关使用 API 进行实际编码的教程，请参阅我们的[Colab Notebook](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5) ，其中介绍了如何使用现有模型运行推理，以及如何在自定义数据集上训练内置模型。
 
+- https://detectron2.readthedocs.io/en/latest/tutorials/index.html
+- https://detectron2.readthedocs.io/en/latest/modules/model_zoo.html
 
 ## 带有预训练模型的推理演示
 
@@ -68,3 +70,9 @@ cd tools/
 
 有关在detectron2 上构建项目的更多方法，请参见[detectron2/projects](https://github.com/facebookresearch/detectron2/tree/main/projects) 。
 
+
+
+
+```shell
+python demo.py --config-file ../configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml --input ../data/coco_test/000000000133.jpg    [--other-options]  --opts MODEL.WEIGHTS /home/hxzh02/PycharmProjects/detectron2Lab/weights/COCO-InstanceSegmentation/Mask_R_CNN/MaskRCNN_R50_FPN_3x.pkl
+```
