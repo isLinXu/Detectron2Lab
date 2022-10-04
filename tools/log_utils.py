@@ -1,5 +1,10 @@
+from datetime import datetime
+from pathlib import Path
+from shutil import copyfile
+
+
 def init_setting(cfg):
-    timestr = str(datetime.datetime.now().strftime('%Y_%m%d_%H%M'))
+    timestr = str(datetime.now().strftime('%Y_%m%d_%H%M'))
     experiment_dir = Path(cfg.GLOBAL['save_result_dir'])
     experiment_dir.mkdir(exist_ok=True)     # 保存实验结果的总目录
     experiment_dir = experiment_dir.joinpath(cfg.GLOBAL['experiment_name'])
