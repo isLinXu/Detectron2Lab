@@ -159,18 +159,17 @@ configs/
 
 def get_models_yaml(model_yaml, save_path, is_save=True):
     model = model_zoo.get(model_yaml, trained=True)
-    #model = model_zoo.get("COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml", trained=True)
-
     print('model:', model)
     print(model.state_dict().keys())
 
     if is_save:
-        # torch.save(model.state_dict(), "../data/model_parameter.pkl")
         torch.save(model.state_dict(), save_path)
     return model
 
 if __name__ == '__main__':
-    model_yaml = 'COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml'
-    save_path = '../data/model_parameter.pkl'
+    # model_yaml = 'COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml'
+    model_yaml = 'COCO-Detection/fast_rcnn_R_50_FPN_1x.yaml'
+    # save_path = '../data/model_parameter.pkl'
+    save_path = '../data/R-50.pkl'
     is_save = True
     get_models_yaml(model_yaml, save_path, is_save)
